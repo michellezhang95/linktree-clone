@@ -41,16 +41,12 @@ class LinksLandingPage extends StatelessWidget {
           Padding(
             padding:
                 const EdgeInsets.all(12.0), //all for all edges of container
-            child: Text('@modernorcawhale'),
+            child: Text('Check out my personal projects below!'),
           ),
           SizedBox(height: 20),
           LinkButton(
-            title: 'Twitter',
-            url: 'https://twitter.com/sugarypizzatv',
-          ),
-          LinkButton(
-            title: 'Twitch',
-            url: 'https://twitch.tv/sugarypizza',
+            title: 'Startup Name Generator',
+            url: 'https://startup-namer-732af.web.app/#/',
           ),
           Spacer(),
           Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
