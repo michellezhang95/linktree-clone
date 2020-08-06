@@ -28,6 +28,7 @@ class LinksLandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.brown[100],
       child: Column(
         children: <Widget>[
           SizedBox(height: 35),
@@ -45,8 +46,19 @@ class LinksLandingPage extends StatelessWidget {
           ),
           SizedBox(height: 20),
           LinkButton(
+            title: 'GitHub',
+            url: 'https://github.com/michellezhang95/',
+            colour: Colors.yellow[800],
+          ),
+          LinkButton(
             title: 'Startup Name Generator',
             url: 'https://startup-namer-732af.web.app/#/',
+            colour: Colors.purple[800],
+          ),
+          LinkButton(
+            title: 'Coffeehouse Reviews (Work In Progress)',
+            url: null,
+            colour: Colors.purple[800],
           ),
           Spacer(),
           Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
@@ -61,13 +73,17 @@ class LinksLandingPage extends StatelessWidget {
 
 //creates a button class that when clicked directs to a url
 class LinkButton extends StatelessWidget {
-  const LinkButton({
+  LinkButton({
     Key key,
     @required this.title,
     @required this.url,
+    @required this.colour,
+    this.image,
   }) : super(key: key);
   final String title;
   final String url;
+  Image image;
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +98,13 @@ class LinkButton extends StatelessWidget {
           onPressed: () => launch(url),
           child: Text(
             title,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+            ),
           ),
-          color: Colors.deepPurpleAccent,
+          color: colour,
         ),
       ),
     );
